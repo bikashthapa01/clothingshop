@@ -3,6 +3,7 @@ import Home from "./routes/home/Home";
 import NavigationBar from "./routes/navigation/NavigationBar";
 import { Shop } from "./routes/shop/Shop";
 import { Register } from "./routes/register/Register";
+import { Login } from "./routes/login/Login";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop/>}/>
         <Route path="register" element={<Register/>}/>
+        <Route path="login" element={<Login/>} />
       </Route>
     </Routes>
   );
