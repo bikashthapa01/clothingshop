@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/logo.svg";
-import "./Navigation.scss"
+import "./Navigation.styles.scss"
 
 
 const NavigationBar = () => {
@@ -13,7 +13,7 @@ const NavigationBar = () => {
         </Link>
         <div className="navigation-links">
           <Link className="nav-link" to="/shop" >Shop</Link>
-          <Link className="nav-link" to="/login" >Login</Link>
+          <Link className="nav-link" to="/auth" >Login</Link>
         </div>
       </div>
       <Outlet />
