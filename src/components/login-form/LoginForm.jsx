@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FormInput } from "../form-input/FormInput";
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInUserWithEmailAndPassword,
 } from "../../utils/firebase/Firebase.utils";
 import { Button } from "../Button/Button";
@@ -24,8 +23,7 @@ export const LoginForm = () => {
 
   const logGoogleUser = async () => {
     try {
-      const { user } = await signInWithGooglePopup();
-      await createUserDocumentFromAuth(user);
+      await signInWithGooglePopup();
     } catch (err) {
       switch (err.code) {
         case "auth/user-not-found":
@@ -46,8 +44,7 @@ export const LoginForm = () => {
     event.preventDefault();
 
     try {
-      const { user } = await signInUserWithEmailAndPassword(email, password);
-      console.log(user.uid);
+      await signInUserWithEmailAndPassword(email, password);
     } catch (err) {
       if (err.code === "auth/user-not-found") {
         setErrMessage("User Not Found");

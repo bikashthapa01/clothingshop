@@ -7,6 +7,7 @@ import { FormInput } from "../form-input/FormInput";
 import { Button } from "../Button/Button";
 
 
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -18,6 +19,7 @@ export const RegisterForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
   const [errorMessage, setErrorMessage] = useState("");
+
 
   const resetForm = () => {
     setFormFields(defaultFormFields);
@@ -42,12 +44,12 @@ export const RegisterForm = () => {
     }
 
     // at this stage all data are validated.
-
     try {
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
+      
       const userData = {
         ...user,
         displayName: displayName,
