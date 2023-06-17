@@ -1,0 +1,25 @@
+.checkout-product-container {
+    
+    .checkout-product-table {
+        width: 100%;
+        padding: 20px 40px;
+        text-align: center;
+
+        &--header {
+            border-bottom: 1px solid gray;
+        }
+    }
+
+    .checkout-product-image {
+        width: 150px;
+        height: 180px;
+    }
+
+    .total_amount {
+        display: flex;
+        justify-content: end;
+        font-weight: 700;
+    }
+
+    
+}
